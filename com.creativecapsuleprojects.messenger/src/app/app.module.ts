@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {SplashPage} from '../pages/splash/splash';
 import {LoginPage} from '../pages/login/login';
+import {ProfilePage} from '../pages/profile/profile';
 import { DbServiceProvider } from '../providers/dbservice/dbservice';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DbServiceProvider } from '../providers/dbservice/dbservice';
     HomePage,
     ListPage,
     SplashPage,
-    LoginPage
+    LoginPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { DbServiceProvider } from '../providers/dbservice/dbservice';
     HomePage,
     ListPage,
     SplashPage,
-    LoginPage
+    LoginPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

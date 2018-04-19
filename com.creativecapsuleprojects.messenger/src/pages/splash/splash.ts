@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {DbServiceProvider} from '../../providers/dbservice/dbservice';
 /**
  * Generated class for the SplashPage page.
  *
@@ -15,7 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 })
 export class SplashPage {
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public splashScreen: SplashScreen) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public splashScreen: SplashScreen, public dbService:DbServiceProvider) {
   }
 
   ionViewDidLoad() {
