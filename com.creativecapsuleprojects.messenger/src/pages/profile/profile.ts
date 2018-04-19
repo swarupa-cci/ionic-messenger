@@ -30,7 +30,10 @@ export class ProfilePage {
   }
 
   updateUser(){
-
+    debugger;
+    var sql = "UPDATE USER SET('NAME','EMAIL') VALUES(?,?) where Id = ?";
+    var params = [this.user.name,this.user.email, this.user.id];
+    this.dbService.executeSqlQuery(sql,params);
   }
 
   getUser(){
@@ -41,15 +44,15 @@ export class ProfilePage {
       var k;
           var users = new Array<User>();
           for(k=0;k<res.rows.length;k++){
-        
-          
+             debugger;
+             alert(res.rows.item(k).Email);
              users.push(
               {
                id 			    : res.rows.item(k).Id,
                name 			  : res.rows.item(k).Name,
-               profileURL 	  : res.rows.item(k).ProfileURL,
-               password      : res.rows.item(k).Password,
-                 email : res.rows.item(k).Email
+               profileURL 	: res.rows.item(k).ProfileURL,
+               password     : res.rows.item(k).Password,
+              email         : res.rows.item(k).Email
               })
           
           }

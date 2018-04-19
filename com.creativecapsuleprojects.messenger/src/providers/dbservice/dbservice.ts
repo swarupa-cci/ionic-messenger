@@ -41,7 +41,7 @@ export class DbServiceProvider {
   }
 
   createTables(){
-    this.sqliteObject.executeSql('CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY, Name TEXT, Password TEXT )', {})
+    this.sqliteObject.executeSql('CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY, Name TEXT, Password TEXT, Email TEXT, ProfileURL TEXT )', {})
     .then(res => console.log('Executed SQL table creation'))
     .catch(e => console.log(e));
   }
