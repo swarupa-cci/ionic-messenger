@@ -33,13 +33,11 @@ export class ListPage {
   }
 
   getVehicles() {
-    this.webservice.getVehicles()
-    .then(data => {
-      console.log(data);
+    this.webservice.getVehicles().subscribe(data=>{
       this.vehicles = data;
-      console.log(this.vehicles);
-    });
+    })
   }
+    
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
