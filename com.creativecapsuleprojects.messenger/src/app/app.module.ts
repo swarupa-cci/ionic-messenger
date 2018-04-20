@@ -10,6 +10,9 @@ import {SplashPage} from '../pages/splash/splash';
 import {LoginPage} from '../pages/login/login';
 import {ProfilePage} from '../pages/profile/profile';
 import { DbServiceProvider } from '../providers/dbservice/dbservice';
+import { WebserviceProvider } from '../providers/webservice/webservice';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { DbServiceProvider } from '../providers/dbservice/dbservice';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,8 @@ import { DbServiceProvider } from '../providers/dbservice/dbservice';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DbServiceProvider
+    DbServiceProvider,
+    WebserviceProvider
   ]
 })
 export class AppModule {}
