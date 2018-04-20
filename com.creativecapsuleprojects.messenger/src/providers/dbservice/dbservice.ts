@@ -47,7 +47,7 @@ export class DbServiceProvider {
   }
 
   executeSqlQuery(query,params){
-
+    debugger;
    return this.sqliteObject.executeSql(query,params)
     .then(res => {
       return res;

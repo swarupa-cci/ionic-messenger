@@ -31,7 +31,7 @@ export class ProfilePage {
 
   updateUser(){
     debugger;
-    var sql = "UPDATE USER SET('NAME','EMAIL') VALUES(?,?) where Id = ?";
+    var sql = "UPDATE USER SET NAME = ? , EMAIL = ?  where Id = ?";
     var params = [this.user.name,this.user.email, this.user.id];
     this.dbService.executeSqlQuery(sql,params);
   }
