@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { AppStorage} from '../../common/appstorage'
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
@@ -10,10 +10,11 @@ import { Storage } from '@ionic/storage';
 })
 export class HomePage {
 
+ // modalCtrl :ModalController;
   storage:Storage = new Storage(null);
   appstorage:AppStorage = new AppStorage(this.storage) ;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController) {
      
   }
 
@@ -37,7 +38,8 @@ export class HomePage {
    }
    else{
    
-    this.navCtrl.push(LoginPage,'');
+    this.modalCtrl.create(LoginPage).present();
+   // this.navCtrl.push(LoginPage,'');
    }
        
   });
