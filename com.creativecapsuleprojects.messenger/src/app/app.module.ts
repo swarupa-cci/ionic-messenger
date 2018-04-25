@@ -13,7 +13,8 @@ import { DbServiceProvider } from '../providers/dbservice/dbservice';
 import { WebserviceProvider } from '../providers/webservice/webservice';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-
+import {Slide1Page} from '../pages/slide1/slide1'
+import {TutorialPage} from '../pages/tutorial/tutorial'
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     ListPage,
     SplashPage,
     LoginPage,
-    ProfilePage
+    ProfilePage,
+    Slide1Page,
+    TutorialPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import { HttpClientModule } from '@angular/common/http';
     ListPage,
     SplashPage,
     LoginPage,
-    ProfilePage
+    ProfilePage,
+    Slide1Page,
+    TutorialPage
   ],
   providers: [
     StatusBar,

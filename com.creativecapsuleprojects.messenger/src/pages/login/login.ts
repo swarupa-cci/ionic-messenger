@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,ViewController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,ViewController,ModalController} from 'ionic-angular';
 import {User} from '../../model/user'
 import { HomePage } from '../home/home';
 import {AppStorage} from '../../common/appstorage';
 import { Storage } from '@ionic/storage';
 import {DbServiceProvider} from '../../providers/dbservice/dbservice';
+import { TutorialPage } from '../tutorial/tutorial';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -24,7 +26,7 @@ export class LoginPage {
   storage:Storage = new Storage(null);
   user = new User();
   appstorage:AppStorage = new AppStorage(this.storage);
-  constructor(public navCtrl: NavController, public navParams: NavParams, public  dbProvider:DbServiceProvider,public viewCtrl:ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public  dbProvider:DbServiceProvider,public viewCtrl:ViewController,public modalCtrl:ModalController) {
    
   }
 
@@ -44,8 +46,10 @@ export class LoginPage {
     this.dbProvider.executeSqlQuery(sql,params);
     this.appstorage.setStorageValue("ISLOGGEDIN","true");
     this.viewCtrl.dismiss();
-   // this.navCtrl.setRoot(HomePage);
+   
     
     
   }
+
+  
 }

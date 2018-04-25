@@ -3,6 +3,7 @@ import { NavController,ModalController } from 'ionic-angular';
 import { AppStorage} from '../../common/appstorage'
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
+import {TutorialPage} from '../tutorial/tutorial'
 
 @Component({
   selector: 'page-home',
@@ -33,17 +34,35 @@ export class HomePage {
         if(val != "true"){
 
          console.log('isloggedin false');
-          this.navCtrl.push(LoginPage,'');
+         this.modalCtrl.create(LoginPage).present();
+    
        }
    }
    else{
-   
+    //this.modalCtrl.create(TutorialPage,'');
     this.modalCtrl.create(LoginPage).present();
    // this.navCtrl.push(LoginPage,'');
    }
        
   });
 
+  }
+
+  ionViewDidEnter(){
+    console.log("View did enter");
+
+    this.appstorage.getStorageValue("ISLOGGEDIN").then((val)=>{
+      if(val != null){
+    
+        if(val == "true"){
+ 
+         console.log('isloggedin true');
+         this.modalCtrl.create(TutorialPage,'').present();
+    
+       }
+      }
+    });
+    
   }
 
 
