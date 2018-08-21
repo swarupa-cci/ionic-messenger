@@ -46,9 +46,7 @@ export class LoginPage {
     this.dbProvider.executeSqlQuery(sql,params);
     this.appstorage.setStorageValue("ISLOGGEDIN","true");
     this.viewCtrl.dismiss();
-   
-    
-    
+
   }
 
   

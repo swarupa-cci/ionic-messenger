@@ -15,6 +15,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {Slide1Page} from '../pages/slide1/slide1'
 import {TutorialPage} from '../pages/tutorial/tutorial'
+import {Camera} from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +50,8 @@ import {TutorialPage} from '../pages/tutorial/tutorial'
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DbServiceProvider,
-    WebserviceProvider
+    WebserviceProvider,
+    Camera
   ]
 })
 export class AppModule {}

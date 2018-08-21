@@ -30,6 +30,8 @@ export class ListPage {
     //     icon: this.icons[Math.floor(Math.random() * this.icons.length)]
     //   });
     // }
+
+  
   }
 
   getVehicles() {
